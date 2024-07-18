@@ -1,0 +1,73 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forms</title>
+    <style>
+      body { font-family: "Arial", sans-serif; margin: 0; padding: 0; display:
+      flex; height: 100vh; overflow: hidden; } .sidebar { width: 250px;
+      background-color: #343a40; color: white; display: flex; flex-direction:
+      column; padding: 1rem; box-sizing: border-box; position: fixed; top: 0;
+      left: 0; bottom: 0; } .sidebar a { color: white; text-decoration: none;
+      display: block; width: 100%; padding: 10px 15px; margin-bottom: 10px;
+      border-radius: 5px; } .sidebar a:hover { background-color: #495057; }
+      .main-content { margin-left: 250px; flex-grow: 1; background-color:
+      #f8f9fa; padding: 2rem; box-sizing: border-box; height: 100vh; overflow-y:
+      auto; } .welcome-text { font-size: 24px; font-weight: bold; margin-top:
+      20px; } .data-container { background-color: white; padding: 20px;
+      border-radius: 5px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); margin-top:
+      20px; } .data-row { display: flex; justify-content: space-between;
+      padding: 10px 0; border-bottom: 1px solid #e9ecef; } .data-row:last-child
+      { border-bottom: none; } .data-label { font-weight: bold; width: 20%; }
+      .data-value { width: 75%; }
+    </style>
+  </head>
+  <body>
+    <div class="sidebar">
+      <a href="https://localhost:8000/admin/dashboard"><i
+          class="fas fa-home"
+        ></i>
+        Home</a>
+      <a href="#"><i class="fas fa-file-alt"></i> Forms</a>
+      <a href="https://localhost:8000/admin/logout"><i
+          class="fas fa-sign-out-alt"
+        ></i>
+        Logout</a>
+    </div>
+    <div class="main-content">
+      <div class="welcome-text">Welcome to Forms</div>
+
+      <!-- Data Display -->
+      <div class="data-container">
+        <div class="data-row">
+          <div class="data-label">Number:</div>
+          <div class="data-value" id="number">12345</div>
+        </div>
+        <div class="data-row">
+          <div class="data-label">Email:</div>
+          <div class="data-value" id="email">example@example.com</div>
+        </div>
+        <div class="data-row">
+          <div class="data-label">Email Subject:</div>
+          <div class="data-value" id="emailSubject">Subject of the Email</div>
+        </div>
+        <div class="data-row">
+          <div class="data-label">Full Name:</div>
+          <div class="data-value" id="fullName">John Doe</div>
+        </div>
+        <div class="data-row">
+          <div class="data-label">Phone Number:</div>
+          <div class="data-value" id="phoneNumber">123-456-7890</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FontAwesome Icons -->
+    {{!     <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script> }}
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/site/admin-login/js/forms.js"></script>
+  </body>
+</html>

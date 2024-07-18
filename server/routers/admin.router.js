@@ -2,6 +2,8 @@ const {
   httpsFailed,
   httpsAdminDashboard,
   httpsAdminLogin,
+  httpsAdminForms,
+  httpsLogOut,
 } = require("./admin.controller");
 const passport = require("passport");
 const express = require("express");
@@ -9,14 +11,16 @@ const express = require("express");
 const adminRouter = express.Router();
 
 adminRouter.get("/", redirectUserWhenLoggedin, httpsAdminLogin);
-adminRouter.get("/dashboard", checkLoggedIn, httpsAdminDashboard);
+adminRouter.get("/forms", checkLoggedIn, httpsAdminForms),
+  adminRouter.get("/dashboard", checkLoggedIn, httpsAdminDashboard);
 adminRouter.get("/admin-dashboard.html", checkLoggedIn, httpsAdminDashboard);
+adminRouter.get("/logout", checkLoggedIn, httpsLogOut);
 adminRouter.get("/failed", httpsFailed);
 
 // Check logged in
 function checkLoggedIn(req, res, next) {
   const isLoggedIn = req.isAuthenticated() && req.user;
-  console.log("Current user is: ", req.user);
+  /* console.log("Current user is: ", req.user); */
   if (!isLoggedIn) {
     return res.status(401).json({
       error: "You must log in.",

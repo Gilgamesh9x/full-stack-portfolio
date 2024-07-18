@@ -17,6 +17,10 @@ const formsSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  yourMessage: {
+    type: String,
+    required: true,
+  },
   formNumber: Number,
 });
 

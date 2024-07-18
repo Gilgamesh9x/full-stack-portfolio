@@ -71,7 +71,7 @@ submitButton.addEventListener("click", async (e) => {
     console.log(keysValues);
     //
     try {
-      const response = await fetch("http://localhost:8000/submit-form", {
+      const response = await fetch("https://localhost:8000/submit-form", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
